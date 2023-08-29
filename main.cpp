@@ -1,7 +1,14 @@
 #include <iostream>
+#include <cstring>
 #include <unistd.h>
 
-int main() {
+int main(int argc, char* argv[]) {
+	if(strcmp(argv[1], "-S") == 0) {
+		// TODO: Fancy mirror stuff
+		if(strcmp(argv[1], "neofetch") == 0) {
+			std::cout << "mirror tmp api working";
+		}
+	}
 	// Make variables
 	char* args[512 + 1];
 	char* workingdir = "./neofetch";
@@ -17,9 +24,9 @@ int main() {
 	// Create child process
 	child_pid = fork();
 		if(child_pid == 0) {
-			execvp(args[0], args);
+			//execvp(args[0], args);
 
 			// Exit if error
-			exit(1);
+			//exit(1);
 		}
 }
