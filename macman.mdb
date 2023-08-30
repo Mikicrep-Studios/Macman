@@ -1,0 +1,6 @@
+{
+	"neofetch": {
+		"url": "https://github.com/Mikicrep-Studios/Neofetch/releases/download/release/neofetch",
+		"dest": "/bin/neofetch"
+	}
+}
