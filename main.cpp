@@ -25,12 +25,12 @@ int main(int argc, char* argv[]) {
         std::string urlCopy = mdb[package]["url"].GetString();
 		
 		const char* args[6];
-		args[0] = "echo";
-		args[1] = "curl";
-		args[2] = urlCopy.c_str();
-		args[3] = "-Lo";
-		args[4] = destCopy.c_str();
-		args[5] = NULL;
+		//args[0] = "sudo";
+		args[0] = "curl";
+		args[1] = urlCopy.c_str();
+		args[2] = "-Lo";
+		args[3] = destCopy.c_str();
+		args[4] = NULL;
 
 		char* execargs[6];
         for (int i = 0; i < 5; ++i) {
@@ -49,6 +49,7 @@ int main(int argc, char* argv[]) {
 			execargsp[i] = const_cast<char*>(argsp[i]);
 		}*/
 		
+		std::cout << "Starting...\n";
 		pid_t child_pid;
 		child_pid = fork();
 		if(child_pid == 0) {
@@ -58,6 +59,7 @@ int main(int argc, char* argv[]) {
 			// Exit if error
 			exit(1);
 		}
+		std::cout << "Finished...\n";
 	}
 	// Make variables
 	//pid_t child_pid;
